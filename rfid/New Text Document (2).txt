@@ -1,0 +1,24 @@
+sudo raspi-config
+
+sudo apt-get update
+sudo apt-get install -y libusb-dev libpcsclite-dev i2c-tools build-essential wget
+
+cd ~
+wget http://dl.bintray.com/nfc-tools/sources/libnfc-1.7.1.tar.bz2
+tar -xf libnfc-1.7.1.tar.bz2
+
+cd libnfc-1.7.1
+./configure --prefix=/usr --sysconfdir=/etc
+make
+sudo make install
+
+sudo mkdir -p /etc/nfc
+sudo tee /etc/nfc/libnfc.conf > /dev/null <<EOL
+allow_autoscan = true
+allow_intrusive_scan = false
+log_level = 1
+device.name = "_PN532_I2c"
+device.connstring = "pn532_i2c:/dev/i2c-1"
+EOL
+
+pip install adafruit-blinka adafruit-circuitpython-busdevice adafruit-circuitpython-pn532
