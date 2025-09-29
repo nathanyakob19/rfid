@@ -1,0 +1,8 @@
+
+sudo raspi-config
+Go to Interfacing options ->I2C & SPI -> Enable it.
+pip install pyfingerprint –break-system-packages
+ls /dev/ttyUSB*
+sudo apt-get -f install
+sudo usermode -a -G dialout pi
+sudo pip3 install pyfingerprint
