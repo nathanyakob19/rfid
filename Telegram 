@@ -1,0 +1,12 @@
+sudo apt-get update
+sudo apt-get install python3-pip -y
+sudo apt-get install python3-venv -y
+python3 -m venv myenv
+source myenv/bin/activate
+
+pip install telepot
+pip install RPi.GPIO
+
+git clone https://github.com/salmanforivp/TelegramBot.git
+cd TelegramBot
+nano telegram_bot.py
