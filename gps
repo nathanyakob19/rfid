@@ -1,0 +1,19 @@
+sudo apt install python3-venv
+python3 -m venv myenv
+source myenv/bin/activate
+(myenv) pi@raspberrypi:~$.
+
+dtparam=spi=on
+dtoverlay=pi3-disable-bt
+core_freq=250
+enable_uart=1
+force_turbo=1
+sudo systemctl stop serial-getty@ttyS0.service
+sudo systemctl disable serial-getty@ttyS0.service
+sudo systemctl enable serial-getty@ttAMA0.service
+
+sudo apt-get install minicom
+pip install pynmea2 --break-system-packages
+
+sudo cat /dev/ttyS0
+ctrl+c to stop
