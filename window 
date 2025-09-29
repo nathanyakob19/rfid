@@ -1,0 +1,29 @@
+Step 1: Download WoR Tool
+Download the latest pre-release version of the WoR (Windows on Raspberry Pi) tool from https://www.worproject.ml/downloads.
+Extract the downloaded files.
+
+Step 2: Prepare Windows 10 ARM64 ISO
+Go to https://uupdump.net.
+Choose a Windows 10 ARM64 build (latest stable version recommended).
+Download the script (a .zip file) and run it on your Windows PC.
+The script will download the required files directly from Microsoft and build a Windows 10 ARM64 ISO file.
+Once completed, you will have a Windows 10 ARM64 ISO file ready.
+
+Step 3: Install WoR and Prepare Storage
+Insert the prepared storage (MicroSD card or SSD) into your Windows PC.
+Open WoR.exe and run it as an administrator.
+Follow the wizard with the following steps:
+Step 1: Select your storage device (SD/SSD).
+Step 2: Point to your Windows 10 ARM64 ISO file.
+Step 3: Select your device type: Raspberry Pi 4.
+Step 4: Provide the UEFI firmware and drivers.
+Step 5: Confirm the installation settings.
+WoR will then flash the Windows image to your storage device. This process can take 30-60 minutes, depending on the speed of your storage.
+
+Step 4: Booting Raspberry Pi 4
+Insert the prepared storage into your Raspberry Pi 4.
+Power on the Raspberry Pi. It will first load into the UEFI firmware screen.
+Recommended: Go into the UEFI Settings, change the Boot Order to make your SD/SSD the first boot option, then save and reboot.
+The Windows 10 setup will now begin. Select your language, region, and keyboard layout, and configure your system preferences.
+For network access, use a USB to Ethernet adapter or a compatible Wi-Fi dongle.
+Install the Microsoft Edge browser by double-clicking the icon.
